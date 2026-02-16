@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.9816 0.0129 83.02);
+  --foreground: oklch(0.2644 0.0294 252.82);
+  --card: oklch(0.9932 0.0056 89.47);
+  --card-foreground: oklch(0.2644 0.0294 252.82);
+  --popover: oklch(0.9974 0.0041 89.2);
+  --popover-foreground: oklch(0.2644 0.0294 252.82);
+  --primary: oklch(0.4468 0.1088 201.66);
+  --primary-foreground: oklch(0.9859 0.0051 92.31);
+  --secondary: oklch(0.9387 0.0191 85.13);
+  --secondary-foreground: oklch(0.2927 0.031 253.29);
+  --muted: oklch(0.9539 0.0138 86.21);
+  --muted-foreground: oklch(0.5098 0.0298 252.74);
+  --accent: oklch(0.9149 0.0426 153.64);
+  --accent-foreground: oklch(0.277 0.0447 196.39);
+  --destructive: oklch(0.6132 0.2218 27.02);
+  --destructive-foreground: oklch(0.9859 0.0051 92.31);
+  --border: oklch(0.8736 0.0174 89.03);
+  --input: oklch(0.8736 0.0174 89.03);
+  --ring: oklch(0.4468 0.1088 201.66);
+  --radius: 1rem;
+}
+
+.dark {
+  --background: oklch(0.1982 0.0175 250.81);
+  --foreground: oklch(0.9361 0.009 94.19);
+  --card: oklch(0.2471 0.0228 252.31);
+  --card-foreground: oklch(0.9361 0.009 94.19);
+  --popover: oklch(0.2376 0.0207 252.08);
+  --popover-foreground: oklch(0.9361 0.009 94.19);
+  --primary: oklch(0.7014 0.1049 189.21);
+  --primary-foreground: oklch(0.2048 0.0198 248.67);
+  --secondary: oklch(0.3123 0.0256 251.84);
+  --secondary-foreground: oklch(0.9422 0.01 92.73);
+  --muted: oklch(0.2818 0.021 251.8);
+  --muted-foreground: oklch(0.7309 0.0137 247.66);
+  --accent: oklch(0.4245 0.0689 156.14);
+  --accent-foreground: oklch(0.9361 0.009 94.19);
+  --destructive: oklch(0.6642 0.2173 24.11);
+  --destructive-foreground: oklch(0.9686 0.0075 92.14);
+  --border: oklch(0.3564 0.0207 251.77);
+  --input: oklch(0.3564 0.0207 251.77);
+  --ring: oklch(0.7014 0.1049 189.21);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-dm-serif);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      color-mix(in oklab, var(--foreground) 12%, transparent) 1px,
+      transparent 0
+    );
+    background-size: 28px 28px;
+    opacity: 0.12;
+    z-index: -1;
+  }
+}
+
+.dark body::before {
+  opacity: 0.08;
+}
+
+.reveal {
+  opacity: 0;
+  animation: rise 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.section-card {
+  background: linear-gradient(
+    150deg,
+    color-mix(in oklab, var(--card) 92%, white),
+    color-mix(in oklab, var(--card) 88%, var(--accent))
+  );
+}
+
+.dark .section-card {
+  background: linear-gradient(
+    145deg,
+    color-mix(in oklab, var(--card) 90%, black),
+    color-mix(in oklab, var(--card) 76%, var(--accent))
+  );
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    animation: none;
+  }
+}
