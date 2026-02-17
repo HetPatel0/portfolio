@@ -22,31 +22,16 @@ function resolveInitialTheme(): Theme {
 }
 
 export function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>(resolveInitialTheme);
 
   useEffect(() => {
-    const initialTheme = resolveInitialTheme();
-    document.documentElement.classList.toggle("dark", initialTheme === "dark");
-    setTheme(initialTheme);
-    setMounted(true);
-  }, []);
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+  }, [theme]);
 
   const toggleTheme = () => {
-    const nextTheme: Theme = theme === "dark" ? "light" : "dark";
-    document.documentElement.classList.toggle("dark", nextTheme === "dark");
-    window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
-    setTheme(nextTheme);
+    setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"));
   };
-
-  if (!mounted) {
-    return (
-      <div
-        aria-hidden
-        className="h-8 w-24 rounded-full border border-border/70 bg-background/60"
-      />
-    );
-  }
 
   return (
     <Button

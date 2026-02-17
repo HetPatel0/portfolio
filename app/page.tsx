@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -20,6 +21,7 @@ const projects = [
     proof:
       "Built to translate technical ideas into an interface that feels intuitive and educational.",
     liveUrl: "https://mlsimulation.vercel.app/",
+    siteImage: "/projects/ml-simulation.png",
     tags: ["Next.js", "Tailwind", "Learning UX"],
   },
   {
@@ -29,6 +31,7 @@ const projects = [
     proof:
       "Shows product thinking, practical UI flow, and clean state handling for real usage.",
     liveUrl: "https://stacksup.vercel.app/",
+    siteImage: "/projects/expense-tracker.png",
     tags: ["Full-Stack", "AI Feedback", "Product UX"],
   },
   {
@@ -38,6 +41,7 @@ const projects = [
     proof:
       "Combines model-backed prediction with a simple, trust-focused user input experience.",
     liveUrl: "https://cardiocheckai.vercel.app/",
+    siteImage: "/projects/cardio-check.png",
     tags: ["Machine Learning", "Healthcare", "Predictive Model"],
   },
 ];
@@ -144,7 +148,7 @@ export default function Home() {
           </p>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
             {projects.map((project) => (
-              <Card key={project.name} className="h-full section-card">
+              <Card key={project.name} className="group h-full section-card">
                 <CardHeader>
                   <CardTitle className="font-display text-3xl leading-tight">
                     {project.name}
@@ -154,6 +158,22 @@ export default function Home() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
+                  <div className="mb-5 overflow-hidden rounded-xl border border-border/80 bg-background/55">
+                    {project.siteImage ? (
+                      <Image
+                        src={project.siteImage}
+                        alt={`${project.name} website preview`}
+                        width={1200}
+                        height={700}
+                        className="h-44 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                      />
+                    ) : (
+                      <div className="flex h-44 items-center justify-center bg-muted/70 text-center text-sm font-medium text-muted-foreground">
+                        Preview unavailable
+                      </div>
+                    )}
+                  </div>
+
                   <p className="text-sm leading-relaxed text-foreground/90">{project.proof}</p>
                   {project.liveUrl ? (
                     <a
