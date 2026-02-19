@@ -23,14 +23,48 @@ export const metadata: Metadata = {
 
 const themeInitScript = `
 (() => {
+  const root = document.documentElement;
+  const key = "portfolio-theme";
+
+  const readThemeCookie = () => {
+    const cookieEntry = document.cookie
+      .split("; ")
+      .find((entry) => entry.startsWith(key + "="));
+    if (!cookieEntry) {
+      return null;
+    }
+
+    const cookieValue = decodeURIComponent(cookieEntry.split("=")[1] ?? "");
+    return cookieValue === "light" || cookieValue === "dark" ? cookieValue : null;
+  };
+
+  const applyTheme = (theme) => {
+    root.classList.toggle("dark", theme === "dark");
+    root.setAttribute("data-theme", theme);
+    root.style.colorScheme = theme;
+    document.cookie = key + "=" + encodeURIComponent(theme) + "; path=/; max-age=31536000; SameSite=Lax";
+  };
+
   try {
-    const key = "portfolio-theme";
-    const saved = window.localStorage.getItem(key);
+    let saved = null;
+    try {
+      const stored = window.localStorage.getItem(key);
+      saved = stored === "light" || stored === "dark" ? stored : null;
+    } catch {}
+
+    if (!saved) {
+      saved = readThemeCookie();
+    }
+
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const theme = saved === "light" || saved === "dark" ? saved : (prefersDark ? "dark" : "light");
-    document.documentElement.classList.toggle("dark", theme === "dark");
+    const theme = saved ?? (prefersDark ? "dark" : "light");
+    applyTheme(theme);
+
+    try {
+      window.localStorage.setItem(key, theme);
+    } catch {}
   } catch {
-    document.documentElement.classList.remove("dark");
+    applyTheme("light");
   }
 })();
 `;

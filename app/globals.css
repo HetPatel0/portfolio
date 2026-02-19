@@ -25,6 +25,7 @@
   --radius: 1rem;
 }
 
+:root[data-theme="dark"],
 .dark {
   --background: oklch(0.2057 0.0129 254.64);
   --foreground: oklch(0.9318 0.0062 248.14);
@@ -104,6 +105,7 @@
   }
 }
 
+:root[data-theme="dark"] body::before,
 .dark body::before {
   opacity: 0.08;
 }
@@ -121,6 +123,7 @@
   );
 }
 
+:root[data-theme="dark"] .section-card,
 .dark .section-card {
   background: linear-gradient(
     145deg,
