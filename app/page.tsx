@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -12,6 +11,8 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { ProjectScrollCards } from "@/components/project-scroll-cards";
 
 const projects = [
   {
@@ -96,11 +97,12 @@ export default function Home() {
           <h1 className="mt-7 font-display text-5xl leading-[1.05] tracking-tight md:text-7xl">
             Building digital work that feels calm, sharp, and genuinely useful.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            I am Het Bhuva. I blend frontend precision with machine learning curiosity,
+          <div className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            <TextGenerateEffect words="I am Het Bhuva. I blend frontend precision with machine learning curiosity,
             creating products that not only work well, but also explain complex ideas
-            in a clean and human way.
-          </p>
+            in a clean and human way."/>
+            
+          </div>
 
           <div className="mt-9 flex flex-wrap gap-3">
             <Button asChild size="lg">
@@ -112,12 +114,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          className="reveal mt-16 grid gap-4 md:mt-20 md:grid-cols-3"
+        {/* <section
+          className="reveal mt-16 grid gap-4 md:mt-20 md:grid-cols-3 "
           style={{ animationDelay: "220ms" }}
         >
           <Card className="section-card">
-            <CardHeader>
+            <CardHeader >
+              
               <CardTitle className="font-display text-3xl">3+</CardTitle>
               <CardDescription>Production-style portfolio projects</CardDescription>
             </CardHeader>
@@ -138,7 +141,7 @@ export default function Home() {
               </CardDescription>
             </CardHeader>
           </Card>
-        </section>
+        </section> */}
 
         <Separator className="reveal my-14 md:my-20" style={{ animationDelay: "280ms" }} />
 
@@ -146,56 +149,7 @@ export default function Home() {
           <p className="text-sm font-semibold tracking-[0.14em] text-muted-foreground uppercase">
             Selected Projects
           </p>
-          <div className="mt-6 grid gap-5 md:grid-cols-3">
-            {projects.map((project) => (
-              <Card key={project.name} className="group h-full section-card">
-                <CardHeader>
-                  <CardTitle className="font-display text-3xl leading-tight">
-                    {project.name}
-                  </CardTitle>
-                  <CardDescription className="mt-2 leading-relaxed">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="mb-5 overflow-hidden rounded-xl border border-border/80 bg-background/55">
-                    {project.siteImage ? (
-                      <Image
-                        src={project.siteImage}
-                        alt={`${project.name} website preview`}
-                        width={1200}
-                        height={700}
-                        className="h-44 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-                      />
-                    ) : (
-                      <div className="flex h-44 items-center justify-center bg-muted/70 text-center text-sm font-medium text-muted-foreground">
-                        Preview unavailable
-                      </div>
-                    )}
-                  </div>
-
-                  <p className="text-sm leading-relaxed text-foreground/90">{project.proof}</p>
-                  {project.liveUrl ? (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-4 inline-flex text-sm font-medium text-primary underline-offset-4 transition-colors hover:text-primary/80 hover:underline"
-                    >
-                      Live Demo
-                    </a>
-                  ) : null}
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="rounded-full">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <ProjectScrollCards projects={projects} />
         </section>
 
         <section className="reveal mt-16 grid gap-5 md:mt-20 md:grid-cols-3" style={{ animationDelay: "420ms" }}>
