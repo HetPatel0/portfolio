@@ -114,35 +114,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* <section
-          className="reveal mt-16 grid gap-4 md:mt-20 md:grid-cols-3 "
-          style={{ animationDelay: "220ms" }}
-        >
-          <Card className="section-card">
-            <CardHeader >
-              
-              <CardTitle className="font-display text-3xl">3+</CardTitle>
-              <CardDescription>Production-style portfolio projects</CardDescription>
-            </CardHeader>
-          </Card>
-          <Card className="section-card">
-            <CardHeader>
-              <CardTitle className="font-display text-3xl">AI + UI</CardTitle>
-              <CardDescription>
-                Focused on usable experiences for technical products
-              </CardDescription>
-            </CardHeader>
-          </Card>
-          <Card className="section-card">
-            <CardHeader>
-              <CardTitle className="font-display text-3xl">Clean Systems</CardTitle>
-              <CardDescription>
-                Component-led structure with thoughtful visual rhythm
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </section> */}
-
         <Separator className="reveal my-14 md:my-20" style={{ animationDelay: "280ms" }} />
 
         <section id="projects" className="reveal" style={{ animationDelay: "340ms" }}>

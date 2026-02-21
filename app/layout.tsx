@@ -4,6 +4,7 @@ import { DM_Serif_Display, Manrope } from "next/font/google";
 import Script from "next/script";
 
 import "./globals.css";
+import LenisProvider from "@/components/lenis-provoder";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -36,7 +37,10 @@ export default function RootLayout({
          
         </Script>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <LenisProvider>
+
         {children}
+          </LenisProvider>
           </ThemeProvider>
       </body>
     </html>
