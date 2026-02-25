@@ -64,7 +64,8 @@ const principles = [
 
 export default function Home() {
   return (
-    <main className="relative overflow-hidden">
+    <main className="relative isolate min-h-screen overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(125%_125%_at_50%_90%,#ffffff_40%,#1d9bf0_100%)] transition-all duration-700 ease-in-out dark:bg-[radial-gradient(125%_125%_at_50%_90%,#15181c_40%,#2563eb_100%)]" />
       <div className="pointer-events-none absolute -left-32 top-16 h-72 w-72 rounded-full bg-accent/40 blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-64 h-80 w-80 rounded-full bg-primary/20 blur-3xl" />
 
