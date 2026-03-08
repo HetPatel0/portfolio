@@ -4,6 +4,7 @@ import { DM_Serif_Display, Manrope } from "next/font/google";
 import Script from "next/script";
 
 import "./globals.css";
+import Aurora from "@/components/Aurora";
 import LenisProvider from "@/components/lenis-provoder";
 
 const manrope = Manrope({
@@ -32,16 +33,24 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${manrope.variable} ${dmSerif.variable} antialiased`}>
-
         <Script id="theme-init" strategy="beforeInteractive">
-         
         </Script>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LenisProvider>
-
-        {children}
+            <div className="relative isolate min-h-screen">
+              <div className="pointer-events-none fixed inset-0 -z-20">
+                <Aurora
+                  className="h-full w-full"
+                  colorStops={["#7cff67", "#B19EEF", "#5227FF"]}
+                  blend={0.5}
+                  amplitude={1}
+                  speed={1}
+                />
+              </div>
+              <div className="relative z-10">{children}</div>
+            </div>
           </LenisProvider>
-          </ThemeProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

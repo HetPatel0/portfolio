@@ -68,7 +68,7 @@ export default function Home() {
       <div className="aurora-layer pointer-events-none absolute inset-0 -z-20" />
       <div className="noise-layer pointer-events-none absolute inset-0 -z-10" />
       <div className="pointer-events-none absolute -left-28 top-16 -z-10 h-80 w-80 rounded-full bg-primary/18 blur-3xl" />
-      <div className="pointer-events-none absolute right-0 top-72 -z-10 h-[25rem] w-[25rem] rounded-full bg-accent/25 blur-3xl" />
+      <div className="pointer-events-none absolute right-0 top-72 -z-10 h-100 w-100 rounded-full bg-accent/25 blur-3xl" />
 
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-24 pt-8 md:px-10 md:pt-12">
         <header
@@ -159,7 +159,7 @@ export default function Home() {
 
         <section
           id="contact"
-          className="reveal section-card mt-16 rounded-[2rem] border border-border/80 p-8 md:mt-20 md:p-10"
+          className="reveal section-card mt-16 rounded-4xl border border-border/80 p-8 md:mt-20 md:p-10"
           style={{ animationDelay: "500ms" }}
         >
           <p className="text-sm font-semibold tracking-[0.14em] text-muted-foreground uppercase">
