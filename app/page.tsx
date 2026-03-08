@@ -72,7 +72,7 @@ export default function Home() {
 
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-24 pt-8 md:px-10 md:pt-12">
         <header
-          className="reveal glass-nav sticky top-4 z-40 flex flex-col gap-4 rounded-2xl border border-border/60 px-4 py-3 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6"
+          className="reveal glass-nav sticky top-4 z-40 flex flex-col gap-4 rounded-2xl border border-white/50 px-4 py-3 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6 dark:border-white/12"
           style={{ animationDelay: "50ms" }}
         >
           <p className="font-medium tracking-[0.16em] text-muted-foreground uppercase">
@@ -99,7 +99,7 @@ export default function Home() {
           className="reveal mt-14 md:mt-20"
           style={{ animationDelay: "130ms" }}
         >
-          <div className="section-card relative overflow-hidden rounded-[2rem] border border-border/70 px-6 py-10 md:px-12 md:py-14">
+          <div className="section-card relative overflow-hidden rounded-[2rem] border border-white/45 px-6 py-10 dark:border-white/10 md:px-12 md:py-14">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(95%_85%_at_85%_0%,rgba(102,215,255,0.24)_0%,transparent_64%)]" />
             <div className="pointer-events-none absolute -left-14 top-8 h-28 w-28 rounded-full border border-border/50 bg-background/40 blur-xl" />
             <div className="pointer-events-none absolute right-6 top-14 h-44 w-44 rounded-full bg-primary/18 blur-3xl" />
@@ -159,7 +159,7 @@ export default function Home() {
 
         <section
           id="contact"
-          className="reveal section-card mt-16 rounded-4xl border border-border/80 p-8 md:mt-20 md:p-10"
+          className="reveal section-card mt-16 rounded-4xl border border-white/45 p-8 dark:border-white/10 md:mt-20 md:p-10"
           style={{ animationDelay: "500ms" }}
         >
           <p className="text-sm font-semibold tracking-[0.14em] text-muted-foreground uppercase">

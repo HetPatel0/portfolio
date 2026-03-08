@@ -134,7 +134,7 @@ export const Card = ({
     <motion.div
       onMouseMove={handleMouseMove}
       onMouseLeave={resetInteraction}
-      className="group relative z-0 mx-auto mt-6 aspect-video w-full max-w-5xl rounded-[30px] border border-border/70 bg-card/80 p-2 shadow-2xl shadow-foreground/12 md:mt-8 md:p-5"
+      className="glass-card group relative z-0 mx-auto mt-6 aspect-video w-full max-w-5xl rounded-[30px] border border-white/45 p-2 shadow-2xl shadow-foreground/12 dark:border-white/10 md:mt-8 md:p-5"
       style={{
         scale: reduceMotion ? 1 : scrollScale,
         rotateX: reduceMotion ? 0 : rotateX,
@@ -153,7 +153,7 @@ export const Card = ({
         className="pointer-events-none absolute inset-0 rounded-[30px] opacity-0 mix-blend-screen transition-opacity duration-500 group-hover:opacity-100"
         style={{ background: reduceMotion ? undefined : borderGlow }}
       />
-      <div className="relative h-full w-full overflow-hidden rounded-2xl border border-border/60 bg-background md:rounded-2xl md:p-3">
+      <div className="relative h-full w-full overflow-hidden rounded-2xl border border-white/35 bg-background/86 dark:border-white/10 dark:bg-black/16 md:rounded-2xl md:p-3">
         {children}
       </div>
     </motion.div>
