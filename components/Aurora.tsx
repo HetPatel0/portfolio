@@ -196,6 +196,7 @@ export default function Aurora({
     };
 
     function resize() {
+      if (!ctn) return;
       const width = ctn.offsetWidth;
       const height = ctn.offsetHeight;
       renderer.setSize(width, height);
