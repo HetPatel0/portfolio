@@ -1,0 +1,74 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="800" y1="30" x2="800" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#78C8FF"/>
+      <stop offset="1" stop-color="#D7F1FF"/>
+    </linearGradient>
+    <linearGradient id="sunGlow" x1="1240" y1="90" x2="1240" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF4B0" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#FFF4B0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="mountains" x1="800" y1="320" x2="800" y2="690" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7099AA"/>
+      <stop offset="1" stop-color="#405667"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="800" y1="480" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#74B64F"/>
+      <stop offset="0.22" stop-color="#74B64F"/>
+      <stop offset="0.23" stop-color="#7A5534"/>
+      <stop offset="1" stop-color="#52331E"/>
+    </linearGradient>
+    <pattern id="grassNoise" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#74B64F"/>
+      <rect x="0" y="0" width="12" height="12" fill="#6AAE48"/>
+      <rect x="12" y="12" width="12" height="12" fill="#5E9D40"/>
+      <rect x="16" y="0" width="8" height="8" fill="#87C85F"/>
+      <rect x="0" y="16" width="8" height="8" fill="#7FC358"/>
+    </pattern>
+    <pattern id="dirtNoise" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#7A5534"/>
+      <rect x="0" y="0" width="10" height="10" fill="#704B2C"/>
+      <rect x="10" y="10" width="14" height="14" fill="#684224"/>
+      <rect x="14" y="0" width="10" height="10" fill="#8A633E"/>
+      <rect x="0" y="14" width="10" height="10" fill="#8E6841"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#203243" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect x="1120" y="40" width="180" height="180" fill="url(#sunGlow)"/>
+  <rect x="1160" y="80" width="100" height="100" fill="#FFF3A2"/>
+
+  <g opacity="0.86">
+    <rect x="150" y="120" width="130" height="32" fill="#F4FAFF"/>
+    <rect x="106" y="152" width="216" height="32" fill="#F4FAFF"/>
+    <rect x="920" y="160" width="164" height="36" fill="#F4FAFF"/>
+    <rect x="878" y="196" width="246" height="36" fill="#F4FAFF"/>
+  </g>
+
+  <path d="M0 498L162 392L284 456L438 314L594 432L736 276L882 402L1046 248L1184 348L1318 220L1458 318L1600 278V612H0V498Z" fill="url(#mountains)"/>
+
+  <g filter="url(#shadow)">
+    <path d="M0 630L132 586L224 610L348 542L494 592L610 528L748 570L884 500L1038 560L1186 488L1324 536L1468 470L1600 516V900H0V630Z" fill="url(#hill)"/>
+    <path d="M0 690H1600V900H0V690Z" fill="url(#dirtNoise)"/>
+    <path d="M0 630H1600V694H0V630Z" fill="url(#grassNoise)"/>
+  </g>
+
+  <g opacity="0.95">
+    <rect x="220" y="468" width="28" height="80" fill="#5B3C25"/>
+    <rect x="194" y="420" width="80" height="56" fill="url(#grassNoise)"/>
+    <rect x="166" y="448" width="136" height="52" fill="url(#grassNoise)"/>
+
+    <rect x="1260" y="438" width="28" height="88" fill="#5B3C25"/>
+    <rect x="1230" y="382" width="88" height="62" fill="url(#grassNoise)"/>
+    <rect x="1196" y="418" width="156" height="60" fill="url(#grassNoise)"/>
+  </g>
+
+  <g opacity="0.82">
+    <rect x="652" y="562" width="56" height="38" fill="#8C8E8F"/>
+    <rect x="710" y="562" width="56" height="38" fill="#989A9C"/>
+    <rect x="682" y="524" width="56" height="38" fill="#A3A6A9"/>
+  </g>
+</svg>
