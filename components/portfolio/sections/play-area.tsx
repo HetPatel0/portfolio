@@ -12,8 +12,8 @@ export function PlayArea({ playerX, isJumping, dayMode, mounted }: PlayAreaProps
     <div className="hero-showcase">
       <div className="avatar-card">
         <Image
-          src="/minecraft/overworld-bg.svg"
-          alt="Minecraft-inspired overworld background"
+          src="/minecraft/panorama/panorama_0.png"
+          alt="Minecraft game panorama background"
           fill
           priority
           className="avatar-scene-image"

@@ -21,10 +21,10 @@ export function ProjectsSection({ projects, onSelectProject }: ProjectsSectionPr
           >
             <div className="project-chest-art">
               <Image
-                src="/minecraft/chest.svg"
+                src="/minecraft/textures/chest_minecart.png"
                 alt={`${project.title} chest`}
-                width={220}
-                height={220}
+                width={128}
+                height={128}
                 className="chest-image"
               />
             </div>
