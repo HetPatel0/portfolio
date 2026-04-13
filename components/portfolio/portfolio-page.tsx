@@ -153,7 +153,6 @@ export function PortfolioPage() {
       {loading ? <LoadingScreen /> : null}
 
       <div className="background-layer background-sky" style={skyStyle} />
-      <div className="background-layer background-clouds" />
       <div className="background-layer background-terrain" style={terrainStyle} />
 
       <FloatingControls
