@@ -23,19 +23,19 @@ export function ProjectsSection({ projects, onSelectProject }: ProjectsSectionPr
           <button
             key={project.title}
             type="button"
-            className={`${minecraftPanelClass} group relative min-h-[18rem] overflow-hidden border-2 bg-[image:linear-gradient(180deg,rgba(16,16,16,0.32),rgba(16,16,16,0.72)),var(--texture-stone)] bg-[length:auto,40px_40px] bg-center p-4 text-left transition duration-100 hover:-translate-y-0.5 hover:brightness-105 active:translate-y-px`}
+            className={`${minecraftPanelClass} group relative min-h-72 overflow-hidden border-2 bg-[linear-gradient(180deg,rgba(16,16,16,0.32),rgba(16,16,16,0.72)),var(--texture-stone)] bg-size-[auto,40px_40px] bg-center p-4 text-left transition duration-100 hover:-translate-y-0.5 hover:brightness-105 active:translate-y-px`}
             onClick={() => onSelectProject(project, index)}
           >
             <div
-              className={`relative mb-1 grid min-h-[12.8rem] place-items-center overflow-hidden border-2 border-black bg-[image:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(0,0,0,0.24)),var(--texture-dirt)] bg-[length:auto,32px_32px] bg-center`}
+              className={`relative mb-1 grid min-h-[12.8rem] place-items-center overflow-hidden border-2 border-black bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(0,0,0,0.24)),var(--texture-dirt)] bg-size-[auto,32px_32px] bg-center`}
             >
-              <div className={`absolute inset-0 bg-gradient-to-b ${accentClassMap[project.accent as keyof typeof accentClassMap]}`} />
+              <div className={`absolute inset-0 bg-linear-to-b ${accentClassMap[project.accent as keyof typeof accentClassMap]}`} />
               <Image
                 src="/minecraft/textures/chest_minecart.png"
                 alt={`${project.title} chest`}
                 width={128}
                 height={128}
-                className="relative z-[1] h-auto w-[min(100%,170px)] image-rendering-pixelated drop-shadow-[0_18px_24px_rgba(0,0,0,0.4)] transition duration-100 group-hover:-translate-y-1 group-hover:scale-[1.08]"
+                className="relative z-1 h-auto w-[min(100%,170px)] image-rendering-pixelated drop-shadow-[0_18px_24px_rgba(0,0,0,0.4)] transition duration-100 group-hover:-translate-y-1 group-hover:scale-[1.08]"
               />
             </div>
             <strong className="mt-4 block text-[1.45rem] text-white [text-shadow:2px_2px_0_rgba(0,0,0,0.75)] sm:text-[1.52rem]">

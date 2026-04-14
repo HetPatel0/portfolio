@@ -13,7 +13,7 @@ export function AboutSection({ typedIntro }: AboutSectionProps) {
         className={`${minecraftPanelClass} grid grid-cols-1 gap-4 bg-[linear-gradient(180deg,rgba(124,103,80,0.82),rgba(65,50,36,0.9))] p-4 lg:grid-cols-[1.2fr_0.8fr]`}
       >
         <div className="border-4 border-black/35 bg-[linear-gradient(180deg,rgba(244,232,197,0.97),rgba(224,205,161,0.95))] p-5 text-[#17130d]">
-          <span className="font-[var(--font-display)] text-[0.58rem] uppercase tracking-[0.08em] text-[#674e2f]">
+          <span className="font-(--font-display) text-[0.58rem] uppercase tracking-[0.08em] text-[#674e2f]">
             Player Log
           </span>
           <p className="mt-3 text-[1.3rem] leading-[1.12] sm:text-[1.5rem]">{typedIntro}</p>
@@ -23,7 +23,7 @@ export function AboutSection({ typedIntro }: AboutSectionProps) {
           </p>
         </div>
         <div className="grid content-center gap-3 border-4 border-black/35 bg-[linear-gradient(180deg,rgba(149,104,56,0.96),rgba(110,76,41,0.96))] p-5">
-          <span className="font-[var(--font-display)] text-[0.58rem] uppercase tracking-[0.08em] text-[#ffe093]">
+          <span className="font-(--font-display) text-[0.58rem] uppercase tracking-[0.08em] text-[#ffe093]">
             Current Quest
           </span>
           <strong className="block text-[1.35rem] text-[#fff0b6] sm:text-[1.45rem]">

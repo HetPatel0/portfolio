@@ -11,7 +11,7 @@ export function ContactSection({ onExecuteCommand }: ContactSectionProps) {
       <SectionTitle eyebrow="Contact" title="Send A Command" />
       <div className="grid gap-4 lg:grid-cols-[0.85fr_1.15fr]">
         <div className={`${minecraftPanelClass} overflow-hidden bg-[rgba(19,18,24,0.92)]`}>
-          <div className="bg-black/45 px-4 py-3 font-[var(--font-display)] text-[0.6rem] uppercase tracking-[0.08em] text-[#ffe093]">
+          <div className="bg-black/45 px-4 py-3 font-(--font-display) text-[0.6rem] uppercase tracking-[0.08em] text-[#ffe093]">
             Server Chat
           </div>
           <div className="min-h-full border-4 border-black/30 bg-[rgba(38,34,45,0.85)] p-4">

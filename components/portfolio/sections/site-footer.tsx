@@ -10,7 +10,7 @@ export function SiteFooter({ socialLinks }: SiteFooterProps) {
     <footer
       className={`${sectionShellClass} ${minecraftPanelClass} mt-10 flex flex-col justify-between gap-4 bg-[rgba(24,26,27,0.76)] p-4 sm:flex-row`}
     >
-      <span className="font-[var(--font-display)] text-[0.58rem] uppercase tracking-[0.08em] text-[#ffe093]">
+      <span className="font-(--font-display) text-[0.58rem] uppercase tracking-[0.08em] text-[#ffe093]">
         Crafted in the Overworld with Next.js
       </span>
       <div className="flex flex-wrap gap-4">

@@ -19,14 +19,14 @@ export function SkillsSection({ skills, onHoverSkill }: SkillsSectionProps) {
             onMouseEnter={() => onHoverSkill(index)}
           >
             <div className="mb-3 grid gap-1.5">
-              <span className="font-[var(--font-display)] text-[0.6rem] uppercase tracking-[0.06em] text-[#a8f7ff]">
+              <span className="font-(--font-display) text-[0.6rem] uppercase tracking-[0.06em] text-[#a8f7ff]">
                 {skill.item}
               </span>
               <strong className="text-[1.55rem] text-white sm:text-[1.7rem]">{skill.name}</strong>
             </div>
             <p className="text-[1.3rem] leading-[1.12] text-[#f4efe4] sm:text-[1.45rem]">{skill.description}</p>
             <div
-              className="mt-3 h-[18px] overflow-hidden border-[3px] border-black/40 bg-black/35"
+              className="mt-3 h-4.5 overflow-hidden border-[3px] border-black/40 bg-black/35"
               aria-label={`${skill.name} proficiency ${skill.level}%`}
             >
               <div
