@@ -148,17 +148,19 @@ button {
   align-items: center;
   justify-content: space-between;
   margin-bottom: calc(1px * var(--hud-scale));
+  margin-inline: auto;
+  padding-inline: calc(2px * var(--hud-scale));
 }
 
 .mc-hearts,
-.mc-armor {
+.mc-food {
   display: flex;
   gap: calc(1px * var(--hud-scale));
 }
 
 .mc-status-icon {
-  width: calc(9px * var(--hud-scale));
-  height: calc(9px * var(--hud-scale));
+  width: calc(8px * var(--hud-scale));
+  height: calc(8px * var(--hud-scale));
   image-rendering: pixelated;
   filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.85));
 }

@@ -22,9 +22,9 @@ export function HotbarNav({ items, activeSection, onNavigate }: HotbarNavProps) 
             <Image key={`heart-${index}`} src="/minecraft/hud/heart/full.png" alt="" width={9} height={9} className="mc-status-icon" />
           ))}
         </div>
-        <div className="mc-armor">
+        <div className="mc-food">
           {Array.from({ length: statusCount }, (_, index) => (
-            <Image key={`armor-${index}`} src="/minecraft/hud/armor_full.png" alt="" width={9} height={9} className="mc-status-icon" />
+            <Image key={`food-${index}`} src="/minecraft/hud/food_full.png" alt="" width={9} height={9} className="mc-status-icon" />
           ))}
         </div>
       </div>

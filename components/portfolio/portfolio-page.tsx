@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { introText, navItems, projects, skills, socialLinks } from "@/components/portfolio/data";
 import { useTyping } from "@/components/portfolio/hooks/use-typing";
 import { playSynth } from "@/components/portfolio/lib/audio";
@@ -25,7 +25,6 @@ export function PortfolioPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [playerX, setPlayerX] = useState(48);
   const [isJumping, setIsJumping] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
   const typedIntro = useTyping(introText);
 
   useEffect(() => {
@@ -36,8 +35,6 @@ export function PortfolioPage() {
 
   useEffect(() => {
     const onScroll = () => {
-      setScrollY(window.scrollY);
-
       const entries = navItems
         .map(({ id }) => {
           const section = document.getElementById(id);
@@ -96,20 +93,6 @@ export function PortfolioPage() {
 
   const currentTheme = dayMode ? "theme-day" : "theme-night";
 
-  const terrainStyle = useMemo(
-    () => ({
-      transform: `translateY(${scrollY * 0.12}px)`
-    }),
-    [scrollY]
-  );
-
-  const skyStyle = useMemo(
-    () => ({
-      transform: `translateY(${scrollY * 0.06}px)`
-    }),
-    [scrollY]
-  );
-
   const handleNavigate = (id: SectionId) => {
     const section = document.getElementById(id);
     if (!section) {
@@ -152,8 +135,8 @@ export function PortfolioPage() {
     <main className={`portfolio-shell ${currentTheme}`}>
       {loading ? <LoadingScreen /> : null}
 
-      <div className="background-layer background-sky" style={skyStyle} />
-      <div className="background-layer background-terrain" style={terrainStyle} />
+      <div className="background-layer background-sky" />
+      <div className="background-layer background-terrain" />
 
       <FloatingControls
         dayMode={dayMode}
