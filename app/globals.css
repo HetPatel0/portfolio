@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --font-body: var(--font-terminal), monospace;
-  --font-display: var(--font-pixel), monospace;
+  --font-body: var(--font-minecraft), monospace;
+  --font-display: var(--font-minecraft), monospace;
   --texture-button: url("/minecraft/textures/button.png");
   --texture-button-hover: url("/minecraft/textures/button_highlighted.png");
   --texture-stone: url("/minecraft/textures/stone.png");

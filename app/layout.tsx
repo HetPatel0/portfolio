@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { Press_Start_2P, VT323 } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const pixelFont = Press_Start_2P({
-  subsets: ["latin"],
-  variable: "--font-pixel",
-  weight: "400"
-});
-
-const terminalFont = VT323({
-  subsets: ["latin"],
-  variable: "--font-terminal",
-  weight: "400"
+const minecraftFont = localFont({
+  src: "./fonts/Monocraft.ttf",
+  variable: "--font-minecraft",
+  display: "swap"
 });
 
 export const metadata: Metadata = {
@@ -26,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${pixelFont.variable} ${terminalFont.variable}`}>{children}</body>
+      <body className={minecraftFont.variable}>{children}</body>
     </html>
   );
 }

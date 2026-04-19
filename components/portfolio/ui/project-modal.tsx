@@ -46,7 +46,7 @@ export function ProjectModal({ project, soundEnabled, onClose }: ProjectModalPro
         aria-labelledby="project-title"
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="mb-4 flex items-center justify-between gap-4 font-[var(--font-display)] text-[0.7rem] uppercase tracking-[0.04em]">
+        <div className="mb-4 flex items-center justify-between gap-4 [font-family:var(--font-display)] text-[0.7rem] uppercase tracking-[0.04em]">
           <span>Crafting Table</span>
           <button
             type="button"
@@ -63,12 +63,12 @@ export function ProjectModal({ project, soundEnabled, onClose }: ProjectModalPro
         </div>
         <div className="grid gap-4 lg:grid-cols-[0.8fr_1.2fr]">
           <div
-            className={`${accentClassMap[project.accent as keyof typeof accentClassMap]} grid min-h-[14rem] place-items-center border-4 border-black/30 p-4 text-center font-[var(--font-display)] text-[0.8rem]`}
+            className={`${accentClassMap[project.accent as keyof typeof accentClassMap]} grid min-h-[14rem] place-items-center border-4 border-black/30 p-4 text-center [font-family:var(--font-display)] text-[0.8rem]`}
           >
             <span>{project.title}</span>
           </div>
           <div className="border-4 border-black/30 bg-black/20 p-4">
-            <h3 id="project-title" className="mb-3 font-[var(--font-display)] text-[1.2rem]">
+            <h3 id="project-title" className="mb-3 [font-family:var(--font-display)] text-[1.2rem]">
               {project.title}
             </h3>
             <p className="text-[1.3rem] leading-[1.12] text-[#f4efe4] sm:text-[1.45rem]">{project.description}</p>

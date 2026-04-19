@@ -31,7 +31,7 @@ export function PlayArea({ playerX, isJumping, dayMode, mounted }: PlayAreaProps
           <span />
           <span />
         </div>
-        <div className="absolute bottom-[5.2rem] left-4 bg-[rgba(21,16,12,0.82)] px-2.5 py-1 font-(--font-display) text-[0.55rem] uppercase tracking-[0.08em] text-[#ffe093]">
+        <div className="absolute bottom-[5.2rem] left-4 bg-[rgba(21,16,12,0.82)] px-2.5 py-1 [font-family:var(--font-display)] text-[0.55rem] uppercase tracking-[0.08em] text-[#ffe093]">
           Use A / D / Space to move and jump
         </div>
       </div>
@@ -40,7 +40,7 @@ export function PlayArea({ playerX, isJumping, dayMode, mounted }: PlayAreaProps
         className={`${minecraftPanelClass} grid gap-2 bg-[linear-gradient(180deg,rgba(18,29,39,0.86),rgba(16,20,28,0.86))] p-4`}
       >
         <div>
-          <span className="font-(--font-display) text-[0.56rem] uppercase tracking-[0.08em] text-[#ffe093]">
+          <span className="[font-family:var(--font-display)] text-[0.56rem] uppercase tracking-[0.08em] text-[#ffe093]">
             Biome
           </span>
           <strong className="block text-[1.35rem] text-[#fff0b6] sm:text-[1.45rem]">
@@ -48,13 +48,13 @@ export function PlayArea({ playerX, isJumping, dayMode, mounted }: PlayAreaProps
           </strong>
         </div>
         <div>
-          <span className="font-(--font-display) text-[0.56rem] uppercase tracking-[0.08em] text-[#ffe093]">
+          <span className="[font-family:var(--font-display)] text-[0.56rem] uppercase tracking-[0.08em] text-[#ffe093]">
             Focus
           </span>
           <strong className="block text-[1.35rem] text-[#fff0b6] sm:text-[1.45rem]">UI Systems + Creative Dev</strong>
         </div>
         <div>
-          <span className="font-(--font-display) text-[0.56rem] uppercase tracking-[0.08em] text-[#ffe093]">
+          <span className="[font-family:var(--font-display)] text-[0.56rem] uppercase tracking-[0.08em] text-[#ffe093]">
             Mode
           </span>
           <strong className="block text-[1.35rem] text-[#fff0b6] sm:text-[1.45rem]">
