@@ -1,4 +1,5 @@
-import { minecraftButtonClass, minecraftPanelClass } from "@/components/portfolio/lib/styles";
+import { MinecraftButton } from "@/components/portfolio/ui/minecraft/button";
+import { MinecraftPanel } from "@/components/portfolio/ui/minecraft/panel";
 
 type FloatingControlsProps = {
   dayMode: boolean;
@@ -14,15 +15,16 @@ export function FloatingControls({
   onToggleSound
 }: FloatingControlsProps) {
   return (
-    <div
-      className={`${minecraftPanelClass} fixed right-4 top-4 z-20 flex gap-3 bg-[image:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(0,0,0,0.3)),var(--texture-stone)] bg-[length:auto,32px_32px] bg-center p-2 max-sm:static max-sm:mx-auto max-sm:mt-4 max-sm:w-fit`}
+    <MinecraftPanel
+      tone="default"
+      className="fixed right-4 top-4 z-20 flex gap-3 p-2 max-sm:static max-sm:mx-auto max-sm:mt-4 max-sm:w-fit"
     >
-      <button type="button" className={minecraftButtonClass} onClick={onToggleDayMode}>
+      <MinecraftButton type="button" variant="secondary" onClick={onToggleDayMode}>
         {dayMode ? "Night" : "Day"}
-      </button>
-      <button type="button" className={minecraftButtonClass} onClick={onToggleSound}>
+      </MinecraftButton>
+      <MinecraftButton type="button" onClick={onToggleSound}>
         SFX {soundEnabled ? "On" : "Off"}
-      </button>
-    </div>
+      </MinecraftButton>
+    </MinecraftPanel>
   );
 }

@@ -1,6 +1,8 @@
 import Image from "next/image";
-import { minecraftPanelClass, sectionShellClass } from "@/components/portfolio/lib/styles";
+import { sectionShellClass } from "@/components/portfolio/lib/styles";
 import type { Project } from "@/components/portfolio/types";
+import { MinecraftPanel } from "@/components/portfolio/ui/minecraft/panel";
+import { MinecraftTag } from "@/components/portfolio/ui/minecraft/tag";
 import { SectionTitle } from "@/components/portfolio/ui/section-title";
 
 type ProjectsSectionProps = {
@@ -23,9 +25,13 @@ export function ProjectsSection({ projects, onSelectProject }: ProjectsSectionPr
           <button
             key={project.title}
             type="button"
-            className={`${minecraftPanelClass} group relative min-h-72 overflow-hidden border-2 bg-[linear-gradient(180deg,rgba(16,16,16,0.32),rgba(16,16,16,0.72)),var(--texture-stone)] bg-size-[auto,40px_40px] bg-center p-4 text-left transition duration-100 hover:-translate-y-0.5 hover:brightness-105 active:translate-y-px`}
+            className="mcui-panel mcui-panel--dark group relative min-h-72 overflow-hidden p-4 text-left transition duration-100 hover:-translate-y-0.5 hover:brightness-105 active:translate-y-px"
             onClick={() => onSelectProject(project, index)}
           >
+            <div className="mb-3 flex items-center justify-between gap-3">
+              <MinecraftTag tone="gold">Build {index + 1}</MinecraftTag>
+              <MinecraftTag tone="blue">{project.accent}</MinecraftTag>
+            </div>
             <div
               className={`relative mb-1 grid min-h-[12.8rem] place-items-center overflow-hidden border-2 border-black bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(0,0,0,0.24)),var(--texture-dirt)] bg-size-[auto,32px_32px] bg-center`}
             >
@@ -41,6 +47,11 @@ export function ProjectsSection({ projects, onSelectProject }: ProjectsSectionPr
             <strong className="mt-4 block text-[1.45rem] text-white [text-shadow:2px_2px_0_rgba(0,0,0,0.75)] sm:text-[1.52rem]">
               {project.title}
             </strong>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {project.stack.slice(0, 2).map((item) => (
+                <MinecraftTag key={item}>{item}</MinecraftTag>
+              ))}
+            </div>
             <small className="mt-2 block text-[1.05rem] text-[rgba(233,228,215,0.92)] sm:text-[1.1rem]">
               Click to craft details
             </small>

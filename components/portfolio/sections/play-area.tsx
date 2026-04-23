@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { minecraftPanelClass } from "@/components/portfolio/lib/styles";
+import { MinecraftPanel } from "@/components/portfolio/ui/minecraft/panel";
+import { MinecraftTag } from "@/components/portfolio/ui/minecraft/tag";
 
 type PlayAreaProps = {
   playerX: number;
@@ -11,7 +12,7 @@ type PlayAreaProps = {
 export function PlayArea({ playerX, isJumping, dayMode, mounted }: PlayAreaProps) {
   return (
     <div className="grid gap-4">
-      <div className={`${minecraftPanelClass} avatar-card relative min-h-96 overflow-hidden bg-[#203245] p-5`}>
+      <MinecraftPanel tone="dark" className="avatar-card relative min-h-96 overflow-hidden bg-[#203245] p-5">
         <Image
           src={dayMode ? "/minecraft/panorama/panorama_0.png" : "/minecraft/panorama/panorama_1.png"}
           alt="Minecraft game panorama background"
@@ -31,13 +32,13 @@ export function PlayArea({ playerX, isJumping, dayMode, mounted }: PlayAreaProps
           <span />
           <span />
         </div>
-        <div className="absolute bottom-[5.2rem] left-4 bg-[rgba(21,16,12,0.82)] px-2.5 py-1 [font-family:var(--font-display)] text-[0.55rem] uppercase tracking-[0.08em] text-[#ffe093]">
-          Use A / D / Space to move and jump
+        <div className="absolute bottom-[5.2rem] left-4">
+          <MinecraftTag tone="gold">Use A / D / Space</MinecraftTag>
         </div>
-      </div>
+      </MinecraftPanel>
 
       <div
-        className={`${minecraftPanelClass} grid gap-2 bg-[linear-gradient(180deg,rgba(18,29,39,0.86),rgba(16,20,28,0.86))] p-4`}
+        className="mcui-panel mcui-panel--default grid gap-2 p-4"
       >
         <div>
           <span className="[font-family:var(--font-display)] text-[0.56rem] uppercase tracking-[0.08em] text-[#ffe093]">

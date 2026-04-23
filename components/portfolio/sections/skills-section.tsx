@@ -1,5 +1,7 @@
 import type { Skill } from "@/components/portfolio/types";
-import { minecraftPanelClass, sectionShellClass } from "@/components/portfolio/lib/styles";
+import { sectionShellClass } from "@/components/portfolio/lib/styles";
+import { MinecraftPanel } from "@/components/portfolio/ui/minecraft/panel";
+import { MinecraftTag } from "@/components/portfolio/ui/minecraft/tag";
 import { SectionTitle } from "@/components/portfolio/ui/section-title";
 
 type SkillsSectionProps = {
@@ -13,15 +15,14 @@ export function SkillsSection({ skills, onHoverSkill }: SkillsSectionProps) {
       <SectionTitle eyebrow="Skills" title="Tools In Inventory" />
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {skills.map((skill, index) => (
-          <div
+          <MinecraftPanel
             key={skill.name}
-            className={`${minecraftPanelClass} bg-[linear-gradient(180deg,rgba(44,56,69,0.95),rgba(21,28,37,0.95))] p-4 transition duration-100 hover:-translate-y-1`}
+            tone="dark"
+            className="p-4 transition duration-100 hover:-translate-y-1"
             onMouseEnter={() => onHoverSkill(index)}
           >
             <div className="mb-3 grid gap-1.5">
-              <span className="[font-family:var(--font-display)] text-[0.6rem] uppercase tracking-[0.06em] text-[#a8f7ff]">
-                {skill.item}
-              </span>
+              <MinecraftTag tone="blue">{skill.item}</MinecraftTag>
               <strong className="text-[1.55rem] text-white sm:text-[1.7rem]">{skill.name}</strong>
             </div>
             <p className="text-[1.3rem] leading-[1.12] text-[#f4efe4] sm:text-[1.45rem]">{skill.description}</p>
@@ -37,7 +38,7 @@ export function SkillsSection({ skills, onHoverSkill }: SkillsSectionProps) {
             <small className="mt-2 block text-[1.05rem] text-[rgba(233,228,215,0.92)] sm:text-[1.1rem]">
               {skill.level}% mastery
             </small>
-          </div>
+          </MinecraftPanel>
         ))}
       </div>
     </section>

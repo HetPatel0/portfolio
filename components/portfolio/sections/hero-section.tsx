@@ -1,8 +1,8 @@
 import { PlayArea } from "@/components/portfolio/sections/play-area";
-import {
-  minecraftButtonClass,
-  sectionShellClass,
-} from "@/components/portfolio/lib/styles";
+import { sectionShellClass } from "@/components/portfolio/lib/styles";
+import { MinecraftButton } from "@/components/portfolio/ui/minecraft/button";
+import { MinecraftPanel } from "@/components/portfolio/ui/minecraft/panel";
+import { MinecraftTag } from "@/components/portfolio/ui/minecraft/tag";
 
 type HeroSectionProps = {
   onNavigate: (id: "about" | "projects") => void;
@@ -24,11 +24,9 @@ export function HeroSection({
       id="home"
       className={`${sectionShellClass} grid min-h-[calc(100vh-6rem)] grid-cols-1 items-center gap-8 py-12 lg:grid-cols-[1.1fr_0.9fr] lg:py-16`}
     >
-      <div>
-        <p className="[font-family:var(--font-display)] text-[0.6rem] uppercase tracking-[0.08em] text-[#ffe093]">
-          Spawn Point
-        </p>
-        <h1 className="mt-4 [font-family:var(--font-display)] text-[clamp(1.9rem,5vw,3.9rem)] leading-[1.15] text-[#fff4d1] [text-shadow:4px_4px_0_rgba(0,0,0,0.3)]">
+      <MinecraftPanel tone="dark" className="p-4 sm:p-5">
+        <MinecraftTag tone="green">Spawn Point</MinecraftTag>
+        <h1 className="mcui-title mt-4 text-[clamp(1.9rem,5vw,3.9rem)] leading-[1.15] text-[#fff4d1]">
           Hi, I&apos;m Het Bhuva
         </h1>
         <p className="mt-4 text-[clamp(1rem,2vw,1.5rem)] text-[#fff7e5]">
@@ -38,23 +36,15 @@ export function HeroSection({
           Frontend engineer crafting immersive interfaces, polished
           interactions, and systems that scale.
         </p>
-        <div className="mt-7 flex flex-wrap gap-4">
-          <button
-            type="button"
-            className={minecraftButtonClass}
-            onClick={() => onNavigate("about")}
-          >
+        <div className="mt-6 flex flex-wrap gap-3">
+          <MinecraftButton type="button" onClick={() => onNavigate("about")}>
             Start Exploring
-          </button>
-          <button
-            type="button"
-            className={`${minecraftButtonClass} text-[#ffe08a]`}
-            onClick={() => onNavigate("projects")}
-          >
+          </MinecraftButton>
+          <MinecraftButton type="button" variant="secondary" onClick={() => onNavigate("projects")}>
             View Builds
-          </button>
+          </MinecraftButton>
         </div>
-      </div>
+      </MinecraftPanel>
 
       <PlayArea
         playerX={playerX}
